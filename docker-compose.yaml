@@ -27,7 +27,10 @@ services:
       - "1880:1880"
     env_file:
       - .env
+    volumes:
+      - node-red-admin-data:/data
 
 volumes:
   npm-storage:
   npm-conf:
+  node-red-admin-data:
