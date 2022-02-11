@@ -4,6 +4,7 @@ Vagrant.configure("2") do |config|
     config.env.enable
     config.ssh.forward_agent = true
 
+    config.vm.network "forwarded_port", guest: 22, host: 2022
     config.vm.network "forwarded_port", guest: 1880, host: 1881, host_ip: "127.0.0.1", id: "node-red-admin"
     config.vm.network "forwarded_port", guest: 4873, host: 4873, host_ip: "127.0.0.1", id: "npm-registry"
     config.vm.network "forwarded_port", guest: 4874, host: 4874, host_ip: "127.0.0.1", id: "node-red-catalogue"
