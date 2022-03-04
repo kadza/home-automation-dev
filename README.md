@@ -24,3 +24,6 @@ https://stackoverflow.com/questions/24681167/use-ssh-private-key-from-host-in-va
 
 curl http://localhost:4873/-/v1/search
 npm publish --registry http://localhost:4873
+
+ssh-add
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
