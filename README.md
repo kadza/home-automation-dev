@@ -25,5 +25,9 @@ https://stackoverflow.com/questions/24681167/use-ssh-private-key-from-host-in-va
 curl http://localhost:4873/-/v1/search
 npm publish --registry http://localhost:4873
 
+It can be used to forward ssh credentials to the virtual machine.
 ssh-add
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+In my case it isn't enough as I would like to forward it to the container. Although maybe it can be forwarded again. I'm trying with copying the ssh keys
+I used to clone repo via https, but it case
+https://stackoverflow.com/questions/6565357/git-push-requires-username-and-password
