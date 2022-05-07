@@ -1,26 +1,34 @@
-1. vagrant up
-2. localhost:1881/
-3. Clone repository https://github.com/kadza/node-red-flows-home
-4. Install dependencies
-- node-red-contrib-komfovent must be available in catalogue
-
-
-`docker-compose -p home up -d`
-https://www.shogan.co.uk/how-tos/quick-and-easy-local-npm-registry-with-verdaccio-and-docker/
-apt install npm
-/vagrant/dev/node-red-contrib-komfovent$ npm publish --registry http://localhost:4873
-npm view --registry http://localhost:4873
-npm adduser --registry http://localhost:4873/
-/vagrant/node-red-contrib-komfovent$ npm publish --registry http://localhost:4873/
-
-vagrant@ubuntu-bionic:/vagrant/dev/node-red-contrib-komfovent$ cd ../node-red-private-catalogue-builder/
-vagrant@ubuntu-bionic:/vagrant/dev/node-red-private-catalogue-builder$ DOCKER_BUILDKIT=1 docker build . -t kadzaa/node-red-catalogue:latest
-
-SSH agent configuration !!!
-
-https://www.ssh.com/academy/ssh/add
-https://stackoverflow.com/questions/24681167/use-ssh-private-key-from-host-in-vagrant-guest
-
-
-curl http://localhost:4873/-/v1/search
-npm publish --registry http://localhost:4873
+1. Install multipass and vscode
+2. Create vm with multipass
+```
+multipass launch --cloud-init - --disk 40G --mem 4G --cpus 4 --name home <<EOF
+groups:
+- docker
+snap:
+  commands:
+  - [install, docker]
+runcmd:
+- adduser ubuntu docker
+EOF
+```
+3. Login to the vm
+```
+multipass shell home
+```
+4. Generate ssh-key https://phoenixnap.com/kb/generate-setup-ssh-key-ubuntu
+5. Add ssh-key to Github
+6. Clone repo via ssh git@github.com:kadza/home-automation-dev.git
+7. Configure .env based on .env_template
+8. Run docker containers
+```
+docker-compose up -d
+```
+9. Copy ssh keys to node-red-admin. It's necessary to pull node-flow repository
+To be verified https://nickjanetakis.com/blog/docker-tip-56-volume-mounting-ssh-keys-into-a-docker-container
+```
+docker cp ../ssh-tmp/id_rsa.pub node-red-admin:/usr/src/node-red/.ssh
+```
+10. Install vscode remote plugin
+11. Connect to repom on vm
+12. Forward 1880 port to localhost
+13. In a browser localhost:1880

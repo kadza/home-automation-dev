@@ -4,9 +4,9 @@
 [submodule "node-red-admin"]
 	path = node-red-admin
 	url = https://github.com/kadza/node-red-admin
-[submodule "node-red-private-catalogue-builder"]
-	path = node-red-private-catalogue-builder
-	url = https://github.com/kadza/node-red-private-catalogue-builder
 [submodule "node-red-flows-home"]
 	path = node-red-flows-home
 	url = https://github.com/kadza/node-red-flows-home
+[submodule "node-red-private-catalogue"]
+	path = node-red-private-catalogue
+	url = https://github.com/kadza/node-red-private-catalogue
