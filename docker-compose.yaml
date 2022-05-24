@@ -21,6 +21,7 @@ services:
       - node-red-catalogue
     volumes:
       - node-red-admin-data:/data
+      - /tmp/.ssh:/tmp/.ssh
     pull_policy: always
 
 volumes:
