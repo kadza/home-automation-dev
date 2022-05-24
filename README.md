@@ -32,3 +32,13 @@ docker cp ../ssh-tmp/id_rsa.pub node-red-admin:/usr/src/node-red/.ssh
 11. Connect to repom on vm
 12. Forward 1880 port to localhost
 13. In a browser localhost:1880
+
+## TODOS
+Document
+* export NPM_TOKEN=https://docs.npmjs.com/docker-and-private-modules
+* ssh configuration
+* cross platform compilation
+  * installing buildx
+  * installing cross platform support
+  * configuring insecure.host cause by network=host
+* Workflow docker-compose -p home-automation up -d
