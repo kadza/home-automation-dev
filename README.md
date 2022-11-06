@@ -32,3 +32,6 @@ docker cp ../ssh-tmp/id_rsa.pub node-red-admin:/usr/src/node-red/.ssh
 11. Connect to repom on vm
 12. Forward 1880 port to localhost
 13. In a browser localhost:1880
+
+
+git config --global user.email "lukasz.kujawiak@gmail.com"
