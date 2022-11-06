@@ -20,8 +20,13 @@ services:
     depends_on:
       - node-red-catalogue
     volumes:
-      - node-red-admin-data:/data
+      - ~/node-red/data:/data
     pull_policy: always
-
-volumes:
-  node-red-admin-data:
+    secrets:
+      - user_ssh_key
+      - user_ssh_pub_key
+secrets:
+  user_ssh_key:
+    file: ~/.ssh/id_rsa
+  user_ssh_pub_key:
+    file: ~/.ssh/id_rsa.pub
