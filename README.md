@@ -1,37 +1,11 @@
-1. Install multipass and vscode
-2. Create vm with multipass
-```
-multipass launch --cloud-init - --disk 40G --mem 4G --cpus 4 --name home <<EOF
-groups:
-- docker
-snap:
-  commands:
-  - [install, docker]
-runcmd:
-- adduser ubuntu docker
-EOF
-```
-3. Login to the vm
-```
-multipass shell home
-```
-4. Generate ssh-key https://phoenixnap.com/kb/generate-setup-ssh-key-ubuntu
-5. Add ssh-key to Github
-6. Clone repo via ssh git@github.com:kadza/home-automation-dev.git
-7. Configure .env based on .env_template
-8. Run docker containers
-```
-docker-compose up -d
-```
-9. Copy ssh keys to node-red-admin. It's necessary to pull node-flow repository
-To be verified https://nickjanetakis.com/blog/docker-tip-56-volume-mounting-ssh-keys-into-a-docker-container
-```
-docker cp ../ssh-tmp/id_rsa.pub node-red-admin:/usr/src/node-red/.ssh
-```
-10. Install vscode remote plugin
-11. Connect to repom on vm
-12. Forward 1880 port to localhost
-13. In a browser localhost:1880
+1. Setup vm with ssh access and conect with it via VSCode Remote Access. I do it like this: https://github.com/kadza/vm-template
+2. Setup Docker. I do it like this this https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository and https://docs.docker.com/engine/install/linux-postinstall/
+3. Add ssh-key to Github
+4. Clone repo via ssh `git clone git@github.com:kadza/home-automation-dev.git`
+5. Configure .env based on .env_template
+6. Run `./admin-init.sh`
+7. Forward 1880 port to localhost
+8. In a browser http://localhost:1880
+9. Configure github repository and credentials password
+10. Download dependencies
 
-
-git config --global user.email "lukasz.kujawiak@gmail.com"
