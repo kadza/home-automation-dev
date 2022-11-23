@@ -10,3 +10,6 @@
 [submodule "node-red-private-catalogue"]
 	path = node-red-private-catalogue
 	url = https://github.com/kadza/node-red-private-catalogue
+[submodule "home-automation-prod"]
+	path = home-automation-prod
+	url = git@github.com:kadza/home-automation-prod.git
