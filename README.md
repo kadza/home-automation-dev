@@ -27,3 +27,8 @@ ERROR: failed to solve: process "/dev/.buildkit_qemu_emulator
 https://github.com/docker/buildx/issues/464
 https://www.docker.com/blog/multi-platform-docker-builds/
 github action does it
+
+# Misc
+## Auto restart
+* docker auto-restart https://amalgjose.com/2021/02/12/how-to-enable-auto-restart-of-a-docker-container-on-system-reboot/
+* Dell Wyse 5070 Power management -> AC recovery -> Power on after AC loss

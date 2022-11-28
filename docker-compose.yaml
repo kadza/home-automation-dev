@@ -6,6 +6,7 @@ services:
     container_name: node-red-catalogue
     ports:
       - "4874:8080"
+    restart: always
     environment:
      - CORS=true
     pull_policy: always
@@ -15,6 +16,7 @@ services:
     container_name: node-red-admin
     ports:
       - "1880:1880"
+    restart: always
     env_file:
       - .env
     depends_on:
