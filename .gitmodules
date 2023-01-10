@@ -13,3 +13,7 @@
 [submodule "home-automation-prod"]
 	path = home-automation-prod
 	url = git@github.com:kadza/home-automation-prod.git
+
+[submodule "home-app"]
+	path = home-app
+	url = git@github.com:kadza/home-app.git
