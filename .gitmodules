@@ -1,19 +1,18 @@
 [submodule "node-red-contrib-komfovent"]
 	path = node-red-contrib-komfovent
-	url = https://github.com/kadza/node-red-contrib-komfovent
+	url = git@github.com:kadza/node-red-contrib-komfovent.git
 [submodule "node-red-admin"]
 	path = node-red-admin
-	url = https://github.com/kadza/node-red-admin
+	url = git@github.com:kadza/node-red-admin.git
 [submodule "node-red-flows-home"]
 	path = node-red-flows-home
-	url = https://github.com/kadza/node-red-flows-home
+	url = git@github.com:kadza/node-red-flows-home.git
 [submodule "node-red-private-catalogue"]
 	path = node-red-private-catalogue
-	url = https://github.com/kadza/node-red-private-catalogue
+	url = git@github.com:kadza/node-red-private-catalogue.git
 [submodule "home-automation-prod"]
 	path = home-automation-prod
 	url = git@github.com:kadza/home-automation-prod.git
-
 [submodule "home-app"]
 	path = home-app
 	url = git@github.com:kadza/home-app.git

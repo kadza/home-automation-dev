@@ -2,13 +2,15 @@
 1. Setup vm with ssh access and connect with it via VSCode Remote Access. I do it like this: https://github.com/kadza/vm-template
 2. Setup Docker. I do it like this this https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository and https://docs.docker.com/engine/install/linux-postinstall/
 3. Add ssh-key to Github `ssh-keygen`
-4. Clone repo via ssh `git clone git@github.com:kadza/home-automation-dev.git`
-5. Configure .env based on .env_template
-6. Run `./admin-init.sh`
-7. Forward 1880 port to localhost
-8. In a browser http://localhost:1880
-9. Configure github repository and credentials password
-10. Download dependencies
+4. (Optional) it saves typing `eval $(ssh-agent -s) && ssh-add`
+5. Clone repo via ssh `git clone git@github.com:kadza/home-automation-dev.git`
+6. Clone submodules `git submodule update --init --recursive`
+7. Configure .env based on .env_template
+8. Run `./admin-init.sh`
+9. Forward 1880 port to localhost
+10. In a browser http://localhost:1880
+11. Configure github repository and credentials password
+12. Download dependencies
 
 # Remote deploy
 To deploy to remote server run `./home-automation-prod/remote-deploy.sh`
