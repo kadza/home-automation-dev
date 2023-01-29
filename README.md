@@ -1,4 +1,5 @@
 # Env setup
+
 1. Setup vm with ssh access and connect with it via VSCode Remote Access. I do it like this: https://github.com/kadza/vm-template
 2. Setup Docker. I do it like this this https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository and https://docs.docker.com/engine/install/linux-postinstall/
 3. Add ssh-key to Github `ssh-keygen`
@@ -12,13 +13,8 @@
 11. Configure github repository and credentials password
 12. Download dependencies
 
-# Remote deploy
-To deploy to remote server run `./home-automation-prod/remote-deploy.sh`
-## Setup
-* https://forums.docker.com/t/docker-compose-through-ssh-failing-and-referring-to-docker-example-com/115165/10
-* https://www.docker.com/blog/how-to-deploy-on-remote-docker-hosts-with-docker-compose/
-
 # TODO
+
 document .env
 
 I had to create a builder. Why what for?
@@ -31,6 +27,8 @@ https://www.docker.com/blog/multi-platform-docker-builds/
 github action does it
 
 # Misc
+
 ## Auto restart
-* docker auto-restart https://amalgjose.com/2021/02/12/how-to-enable-auto-restart-of-a-docker-container-on-system-reboot/
-* Dell Wyse 5070 Power management -> AC recovery -> Power on after AC loss
+
+-   docker auto-restart https://amalgjose.com/2021/02/12/how-to-enable-auto-restart-of-a-docker-container-on-system-reboot/
+-   Dell Wyse 5070 Power management -> AC recovery -> Power on after AC loss

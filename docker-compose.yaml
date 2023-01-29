@@ -1,42 +1,43 @@
 version: "3.8"
 
 services:
-  home-app:
-    image: kadzaa/home-app:latest
-    ports:
-      - 3001:3000
-    restart: always
-    env_file:
-      - home-app/.env
+    home-app:
+        image: kadzaa/home-app:latest
+        ports:
+            - 3001:3000
+        restart: always
+        env_file:
+            - home-app/.env
+        pull_policy: always
 
-  node-red-catalogue:
-    image: kadzaa/node-red-private-catalogue:latest
-    container_name: node-red-catalogue
-    ports:
-      - "4874:8080"
-    restart: always
-    environment:
-     - CORS=true
-    pull_policy: always
+    node-red-catalogue:
+        image: kadzaa/node-red-private-catalogue:latest
+        container_name: node-red-catalogue
+        ports:
+            - "4874:8080"
+        restart: always
+        environment:
+            - CORS=true
+        pull_policy: always
 
-  node-red-admin:
-    image: kadzaa/node-red-admin:latest
-    container_name: node-red-admin
-    ports:
-      - "1880:1880"
-    restart: always
-    env_file:
-      - .env
-    depends_on:
-      - node-red-catalogue
-    volumes:
-      - ~/node-red/data:/data
-    pull_policy: always
-    secrets:
-      - user_ssh_key
-      - user_ssh_pub_key
+    node-red-admin:
+        image: kadzaa/node-red-admin:latest
+        container_name: node-red-admin
+        ports:
+            - "1880:1880"
+        restart: always
+        env_file:
+            - .env
+        depends_on:
+            - node-red-catalogue
+        volumes:
+            - ~/node-red/data:/data
+        pull_policy: always
+        secrets:
+            - user_ssh_key
+            - user_ssh_pub_key
 secrets:
-  user_ssh_key:
-    file: ~/.ssh/id_rsa
-  user_ssh_pub_key:
-    file: ~/.ssh/id_rsa.pub
+    user_ssh_key:
+        file: ~/.ssh/id_rsa
+    user_ssh_pub_key:
+        file: ~/.ssh/id_rsa.pub
