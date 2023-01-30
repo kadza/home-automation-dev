@@ -10,6 +10,28 @@ services:
             - home-app/.env
         pull_policy: always
 
+    influxdb:
+        image: influxdb:1.8 #alipine isn't available for ARM64
+        container_name: influxdb
+        restart: always
+        network_mode: host
+        env_file:
+            - .env
+        volumes:
+            - influxdb-storage:/var/lib/influxdb
+        labels:
+            - docker-volume-backup.stop-during-backup=true
+
+    grafana:
+        image: grafana/grafana:8.2.4
+        container_name: grafana
+        restart: always
+        network_mode: host
+        depends_on:
+            - influxdb
+        volumes:
+            - grafana-storage:/var/lib/grafana
+
     node-red-catalogue:
         image: kadzaa/node-red-private-catalogue:latest
         container_name: node-red-catalogue
