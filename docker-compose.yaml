@@ -63,3 +63,7 @@ secrets:
         file: ~/.ssh/id_rsa
     user_ssh_pub_key:
         file: ~/.ssh/id_rsa.pub
+
+volumes:
+    influxdb-storage:
+    grafana-storage:
