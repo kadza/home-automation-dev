@@ -1,3 +1,3 @@
 #!/bin/sh
-docker stop node-red-admin && docker rm node-red-admin
+docker compose -p home-automation down
 rm -Rf ~/node-red

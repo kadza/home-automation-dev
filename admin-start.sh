@@ -1,2 +1,2 @@
 #!/bin/sh
-docker compose up -d
+docker compose -p home-automation up -d
