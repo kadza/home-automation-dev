@@ -4,9 +4,6 @@
 [submodule "node-red-flows-home"]
 	path = node-red-flows-home
 	url = git@github.com:kadza/node-red-flows-home.git
-[submodule "node-red-private-catalogue"]
-	path = node-red-private-catalogue
-	url = git@github.com:kadza/node-red-private-catalogue.git
 [submodule "home-automation-prod"]
 	path = home-automation-prod
 	url = git@github.com:kadza/home-automation-prod.git
