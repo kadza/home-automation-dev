@@ -1,6 +1,3 @@
-[submodule "node-red-contrib-komfovent"]
-	path = node-red-contrib-komfovent
-	url = git@github.com:kadza/node-red-contrib-komfovent.git
 [submodule "node-red-admin"]
 	path = node-red-admin
 	url = git@github.com:kadza/node-red-admin.git
