@@ -1,17 +1,13 @@
 # Env setup
 
-1. Setup vm with ssh access and connect with it via VSCode Remote Access. I do it like this: https://github.com/kadza/vm-template
-2. Setup Docker. I do it like this this https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository and https://docs.docker.com/engine/install/linux-postinstall/
-3. Add ssh-key to Github `ssh-keygen`
-4. (Optional) it saves typing `eval $(ssh-agent -s) && ssh-add`
-5. Clone repo via ssh `git clone git@github.com:kadza/home-automation-dev.git`
-6. Clone submodules `git submodule update --init --recursive`
-7. Configure .env based on .env_template
-8. Run `./admin-init.sh`
-9. Forward 1880 port to localhost
-10. In a browser http://localhost:1880
-11. Configure github repository and credentials password
-12. Download dependencies
+1. Clone repo via ssh `git clone git@github.com:kadza/home-automation-dev.git`
+2. Clone submodules `git submodule update --init --recursive`
+3. Configure .env based on .env_template
+4. Run `./admin-init.sh`
+5. In a browser http://localhost:1880
+6. Configure github repository and credentials password
+   To get the credentials, connect to server `ssh luke@192.168.0.170` and `cat repos/home-automation-prod/.env | more`
+7. Download dependencies
 
 # TODO
 
@@ -30,5 +26,5 @@ github action does it
 
 ## Auto restart
 
--   docker auto-restart https://amalgjose.com/2021/02/12/how-to-enable-auto-restart-of-a-docker-container-on-system-reboot/
--   Dell Wyse 5070 Power management -> AC recovery -> Power on after AC loss
+- docker auto-restart https://amalgjose.com/2021/02/12/how-to-enable-auto-restart-of-a-docker-container-on-system-reboot/
+- Dell Wyse 5070 Power management -> AC recovery -> Power on after AC loss
